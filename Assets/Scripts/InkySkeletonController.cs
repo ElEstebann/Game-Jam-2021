@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Ink.Runtime;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 
@@ -22,6 +23,9 @@ public class InkySkeletonController : MonoBehaviour
     TextMeshProUGUI message;
 
     public List<ChoiceButton> buttons;
+
+    public AudioSource musicPlayer;
+    public AudioSource gameOverPlayer;
 
 
     void Start()
@@ -87,6 +91,13 @@ public class InkySkeletonController : MonoBehaviour
             Debug.LogFormat("Bool {0} {1}", name, value);
             skeletonAnimator.SetBool(name, value);
         });
+        story.BindExternalFunction("gameOver", () => {
+            musicPlayer.Pause();
+            gameOverPlayer.Play();
+        });
+        story.BindExternalFunction("restart", () => {
+           SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        });
     }
 
     void AdvanceStory()
@@ -94,8 +105,6 @@ public class InkySkeletonController : MonoBehaviour
         string currentMessage = story.Continue();
         StopAllCoroutines();
         StartCoroutine(TypeMessage(currentMessage));
-
-
     }
     //todo
     void EndStory()
@@ -149,6 +158,9 @@ public class InkySkeletonController : MonoBehaviour
         story.ChooseChoiceIndex(index);
         optionSelect.SetActive(false);
         textBox.SetActive(true);
+        if (!musicPlayer.isPlaying) {
+            musicPlayer.Play();
+        }
         AdvanceStory();
     }
 }
