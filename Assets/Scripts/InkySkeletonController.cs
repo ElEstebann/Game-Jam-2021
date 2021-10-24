@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Ink.Runtime;
 using UnityEngine.UI;
+using TMPro;
 
 
 
@@ -18,11 +19,15 @@ public class InkySkeletonController : MonoBehaviour
     
     List<string> tags;
     static Story story;
-    Text message;
+    TextMeshProUGUI message;
 
     object option1;
     object option2;
     object option3;
+
+    public Button button1;
+    public Button button2;
+    public Button button3; 
     
 
   
@@ -35,10 +40,11 @@ public class InkySkeletonController : MonoBehaviour
     void Start()
     {
         story = new Story(inkFile.text);
-        message = textBox.transform.GetChild(0).GetComponent<Text>();
+        message = textBox.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
         option1 = optionSelect.transform.GetChild(1).GetChild(0).GetComponent<Text>();
         choiceSelected = null;
         optionSelect.SetActive(false);
+        AdvanceStory();
         
     }
 
@@ -50,6 +56,9 @@ public class InkySkeletonController : MonoBehaviour
                 AdvanceStory();
 
                 if(story.currentChoices.Count > 0){
+                    if(story.canContinue){
+                        AdvanceStory();
+                    }
                     StartCoroutine(ShowChoices());
                 }
             }
@@ -104,11 +113,15 @@ public class InkySkeletonController : MonoBehaviour
         Debug.Log("Choices being shown: ");
         List<Choice> choicesList = story.currentChoices;
 
-        Text choiceText;
+        
+        TextMeshProUGUI choiceText;
         for(int i = 0; i < choicesList.Count; i++){
             
             if(i == 0){
                 option1 = choicesList[i];
+                
+                choiceText = button1.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+                choiceText.text = choicesList[i].text;
                 //choiceText = optionSelect.transform.GetChild(1).transform.GetChild(0)
                 //option1.text = choicesList[i].text;
                 //GameObject temp = optionSelect.transform.GetChild(1).GetComponent<GameObject>();
@@ -139,6 +152,7 @@ public class InkySkeletonController : MonoBehaviour
         story.ChooseChoiceIndex(choiceSelected.index);
         optionSelect.SetActive(false);
         textBox.SetActive(true);
+        AdvanceStory();
     }
 
     public void SelectOption1(){
