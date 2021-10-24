@@ -15,6 +15,8 @@ public class InkySkeletonController : MonoBehaviour
     public GameObject textBox;
     //public GameObject prefabButton;
     public GameObject optionSelect;
+    public Animator skeletonAnimator;
+    public Animator dogAnimator;
 
 
 
