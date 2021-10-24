@@ -861,7 +861,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b76809201ab98564d8822392e731b82d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inkFile: {fileID: 4900000, guid: 26e7f6a7073c9fb83b46e77ffe409175, type: 3}
+  inkFile: {fileID: 4900000, guid: 3ffb6133accc1d790b2a5b03b1bf8daa, type: 3}
   textBox: {fileID: 873948148}
   optionSelect: {fileID: 1151802982}
   skeletonAnimator: {fileID: 1945738397}
@@ -870,7 +870,6 @@ MonoBehaviour:
   - {fileID: 1073201962}
   - {fileID: 406171888}
   - {fileID: 1800370702}
-  writingText: 0
 --- !u!4 &1114811369
 Transform:
   m_ObjectHideFlags: 0
