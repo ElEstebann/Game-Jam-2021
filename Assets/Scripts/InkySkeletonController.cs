@@ -28,6 +28,9 @@ public class InkySkeletonController : MonoBehaviour
     public Button button1;
     public Button button2;
     public Button button3;
+    public GameObject buttonObject1;
+    public GameObject buttonObject2;
+    public GameObject buttonObject3;
 
 
 
@@ -130,6 +133,10 @@ public class InkySkeletonController : MonoBehaviour
 
 
         TextMeshProUGUI choiceText;
+        optionSelect.SetActive(true);
+        buttonObject1.SetActive(false);
+        buttonObject2.SetActive(false);
+        buttonObject3.SetActive(false);
         for (int i = 0; i < choicesList.Count; i++)
         {
 
@@ -140,16 +147,23 @@ public class InkySkeletonController : MonoBehaviour
 
                     choiceText = button1.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
                     choiceText.text = choicesList[i].text;
+
+                    buttonObject1.SetActive(true);
                     break;
                 case 1:
                     option2 = choicesList[i];
                     choiceText = button2.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
                     choiceText.text = choicesList[i].text;
+
+                    buttonObject2.SetActive(true);
                     break;
                 case 2:
+
                     option3 = choicesList[i];
                     choiceText = button3.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
                     choiceText.text = choicesList[i].text;
+
+                    buttonObject3.SetActive(true);
                     break;
 
                     //choiceText = optionSelect.transform.GetChild(1).transform.GetChild(0)
@@ -167,7 +181,7 @@ public class InkySkeletonController : MonoBehaviour
             //temp.GetComponent<Button>().onClick.AddListener(() => { temp.GetComponent<Selectable>().Decide(); });
         }
 
-        optionSelect.SetActive(true);
+
         textBox.SetActive(false);
 
         yield return null;

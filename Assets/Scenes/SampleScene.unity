@@ -995,8 +995,11 @@ MonoBehaviour:
   textBox: {fileID: 873948148}
   optionSelect: {fileID: 1151802982}
   button1: {fileID: 1675011299}
-  button2: {fileID: 0}
-  button3: {fileID: 0}
+  button2: {fileID: 1488566389}
+  button3: {fileID: 605396362}
+  buttonObject1: {fileID: 1675011297}
+  buttonObject2: {fileID: 1488566387}
+  buttonObject3: {fileID: 605396360}
   writingText: 0
 --- !u!4 &1114811369
 Transform:
@@ -1353,8 +1356,8 @@ MonoBehaviour:
   m_fontSize: 24
   m_fontSizeBase: 24
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 2
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
@@ -1487,8 +1490,8 @@ MonoBehaviour:
   m_fontSize: 24
   m_fontSizeBase: 24
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 2
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
