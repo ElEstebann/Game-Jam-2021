@@ -13,12 +13,12 @@ public class ChoiceButton : MonoBehaviour
         this.inky = inky;
         this.index = index;
         transform.GetComponent<Button>().onClick.AddListener(this.RunChoice);
-        Debug.LogFormat(this.gameObject, "Register %d", index);
+        Debug.LogFormat(this.gameObject, "Register {0}", index);
     }
 
     void RunChoice()
     {
-        Debug.LogFormat(this.gameObject, "Choice! %d", index);
+        Debug.LogFormat(this.gameObject, "Choice! {0}", index);
         inky.Decide(index);
     }
 }

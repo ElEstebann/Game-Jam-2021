@@ -123,7 +123,7 @@ public class InkySkeletonController : MonoBehaviour
 
         if (choicesList.Count > buttons.Count)
         {
-            Debug.LogErrorFormat("too many choices, expected no more than %d, got %d", buttons.Count, choicesList.Count);
+            Debug.LogErrorFormat("too many choices, expected no more than {0}, got {1}", buttons.Count, choicesList.Count);
         }
 
         for (int i = 0; i < Math.Min(choicesList.Count, buttons.Count); i++)
