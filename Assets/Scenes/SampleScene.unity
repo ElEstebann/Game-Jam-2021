@@ -725,10 +725,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1366, y: 768}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -861,7 +861,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b76809201ab98564d8822392e731b82d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inkFile: {fileID: 4900000, guid: 286dfc2227f5bb545833cd116b450297, type: 3}
+  inkFile: {fileID: 4900000, guid: 26e7f6a7073c9fb83b46e77ffe409175, type: 3}
   textBox: {fileID: 873948148}
   optionSelect: {fileID: 1151802982}
   skeletonAnimator: {fileID: 1945738397}
@@ -1327,7 +1327,7 @@ Animator:
   m_GameObject: {fileID: 1945738394}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 507de18d52ecb864f9f552164808c006, type: 2}
+  m_Controller: {fileID: 9100000, guid: 8db1f60f2c12a2234a69dc4a6edcf4dc, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
