@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,23 +19,10 @@ public class InkySkeletonController : MonoBehaviour
 
 
     List<string> tags;
-    static Story story;
+    Story story;
     TextMeshProUGUI message;
 
-    object option1;
-    object option2;
-    object option3;
-
-    public Button button1;
-    public Button button2;
-    public Button button3;
-    public GameObject buttonObject1;
-    public GameObject buttonObject2;
-    public GameObject buttonObject3;
-
-
-
-    static Choice choiceSelected;
+    public List<ChoiceButton> buttons;
 
     public bool writingText = false;
 
@@ -42,10 +30,13 @@ public class InkySkeletonController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        for (int i = 0; i < buttons.Count; i++)
+        {
+            buttons[i].Register(this, i);
+        }
+
         story = new Story(inkFile.text);
         message = textBox.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
-        option1 = optionSelect.transform.GetChild(1).GetChild(0).GetComponent<Text>();
-        choiceSelected = null;
         optionSelect.SetActive(false);
         AdvanceStory();
 
@@ -59,8 +50,6 @@ public class InkySkeletonController : MonoBehaviour
             if (story.canContinue)
             {
                 AdvanceStory();
-
-
             }
             else
             {
@@ -102,13 +91,6 @@ public class InkySkeletonController : MonoBehaviour
             Debug.Log("tags: " + s);
             // string prefix = s.Split(' ')[0];
             //string suffix = s.Split(' ')[1];
-
-            switch (s)
-            {
-
-            }
-
-
         }
     }
 
@@ -130,55 +112,24 @@ public class InkySkeletonController : MonoBehaviour
     {
         Debug.Log("Choices being shown: ");
         List<Choice> choicesList = story.currentChoices;
+        Debug.Log(choicesList);
 
 
-        TextMeshProUGUI choiceText;
         optionSelect.SetActive(true);
-        buttonObject1.SetActive(false);
-        buttonObject2.SetActive(false);
-        buttonObject3.SetActive(false);
-        for (int i = 0; i < choicesList.Count; i++)
+        foreach (ChoiceButton button in buttons)
         {
+            button.gameObject.SetActive(false);
+        }
 
-            switch (i)
-            {
-                case 0:
-                    option1 = choicesList[i];
+        if (choicesList.Count > buttons.Count)
+        {
+            Debug.LogErrorFormat("too many choices, expected no more than %d, got %d", buttons.Count, choicesList.Count);
+        }
 
-                    choiceText = button1.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
-                    choiceText.text = choicesList[i].text;
-
-                    buttonObject1.SetActive(true);
-                    break;
-                case 1:
-                    option2 = choicesList[i];
-                    choiceText = button2.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
-                    choiceText.text = choicesList[i].text;
-
-                    buttonObject2.SetActive(true);
-                    break;
-                case 2:
-
-                    option3 = choicesList[i];
-                    choiceText = button3.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
-                    choiceText.text = choicesList[i].text;
-
-                    buttonObject3.SetActive(true);
-                    break;
-
-                    //choiceText = optionSelect.transform.GetChild(1).transform.GetChild(0)
-                    //option1.text = choicesList[i].text;
-                    //GameObject temp = optionSelect.transform.GetChild(1).GetComponent<GameObject>();
-                    // temp.AddComponent<Selectable>();
-                    //temp.GetComponent<OptionScript>().element = choicesList[i];
-                    //temp.GetComponent<Button>().onClick.AddListener(() => { temp.GetComponent<OptionScript>().Decide(); });
-                    //butt.onClick.AddListener(() => {Decide(choicesList[i]);});
-                    //optionSelect.GetChild(1).AddComponent<Selectable>();
-            }
-
-            //temp.AddComponent<Selectable>();
-            //temp.GetComponent<Selectable>().element = choicesList[i];
-            //temp.GetComponent<Button>().onClick.AddListener(() => { temp.GetComponent<Selectable>().Decide(); });
+        for (int i = 0; i < Math.Min(choicesList.Count, buttons.Count); i++)
+        {
+            buttons[i].transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = choicesList[i].text;
+            buttons[i].gameObject.SetActive(true);
         }
 
 
@@ -187,27 +138,11 @@ public class InkySkeletonController : MonoBehaviour
         yield return null;
     }
 
-    public void Decide(object element)
+    public void Decide(int index)
     {
-
-
-        choiceSelected = (Choice)element;
-        story.ChooseChoiceIndex(choiceSelected.index);
+        story.ChooseChoiceIndex(index);
         optionSelect.SetActive(false);
         textBox.SetActive(true);
         AdvanceStory();
-    }
-
-    public void SelectOption1()
-    {
-        Decide(option1);
-    }
-    public void SelectOption2()
-    {
-        Decide(option2);
-    }
-    public void SelectOption3()
-    {
-        Decide(option3);
     }
 }
