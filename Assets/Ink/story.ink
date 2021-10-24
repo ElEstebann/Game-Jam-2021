@@ -1,7 +1,6 @@
 - I looked at Monsieur Fogg
-- I did a ponder...
-#1
 *   ... and I could contain myself no longer.
+    #B
     'What is the purpose of our journey, Monsieur?'
     'A wager,' he replied.
     * *     'A wager!'[] I returned.
