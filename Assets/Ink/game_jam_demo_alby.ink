@@ -1,6 +1,7 @@
 EXTERNAL skeletonAnimationTrigger(animation)
 EXTERNAL skeletonAnimationFloat(animation, value)
 EXTERNAL skeletonAnimationBool(animation, value)
+EXTERNAL treeAnimationBool(animation, value)
 EXTERNAL gameOver()
 EXTERNAL restart()
 
@@ -8,6 +9,7 @@ EXTERNAL restart()
 ~ skeletonAnimationBool("Dead", false)
 ~ skeletonAnimationFloat("BrodyPercent", 0)
 ~ skeletonAnimationFloat("RattlePercent", 0)
+~ treeAnimationBool("TreeFallDown", false)
 
 Controls: Space to advance text, left mouse button to select a choice, alt f4 to exit
 * [Begin]
@@ -150,7 +152,7 @@ It made Destin sick. He almost died from all the cuteness. Or died again in this
 
 "Yes! I'm already halfway there," said Destin. "And I did it all by myself, like a big boy."
 
-Destin felt a strange pride in him. All his afterlife. He had servants taking care of him. It didn't leave him much room for growth. Is this what commoners felt like? This pride of doing things by one's own actions. What if there's more to life than being Lord Viscount?
+Destin felt a strange pride in him. All his afterlife. Is this what commoners felt like? This pride of doing things by one's own actions. What if there's more to life than being Lord Viscount?
 
 "Nonsense. Being Lord Viscount is the best thing ever," Destin said, dismissing such thoughts. "It will be even better once I reach the Arm and Leg Tavern.
 
@@ -253,7 +255,9 @@ Destin noticed a tree next to the riverbank. The one that wasn't singing about s
 
 * [Oh, sweet naïve skeleton.]
 
-With a smile on his face, Destin approached the tree. He grabbed the axe and hacked right through it. The old Destin would never do grunt work. That's what the servants are for. But desperate times called for desperate measures. Destin had to do things by himself, like a normal person. He had no experience with tree cutting. Not like that mattered. No flesh, no splinters. Destin chopped and hacked the tree until it fell.
+~ treeAnimationBool("TreeFallDown", true)
+
+With a smile on his face, Destin approached the tree. He grabbed the axe and hacked right through it. The old Destin would never do grunt work. That's what servants are for. But desperate times called for desperate measures. Destin had to do things by himself, like a normal person. He had no experience with tree cutting. Not like that mattered. No flesh, no splinters. Destin chopped and hacked the tree until it fell.
 
 "Timber!" shouted Destin as the tree collapsed on the riverbank. He always wanted to say that.
 
