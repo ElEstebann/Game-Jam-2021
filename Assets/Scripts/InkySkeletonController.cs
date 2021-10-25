@@ -16,6 +16,7 @@ public class InkySkeletonController : MonoBehaviour
     public GameObject optionSelect;
     public Animator skeletonAnimator;
     public Animator dogAnimator;
+    public Animator treeAnimator;
 
 
     List<string> tags;
@@ -90,6 +91,11 @@ public class InkySkeletonController : MonoBehaviour
         {
             Debug.LogFormat("Bool {0} {1}", name, value);
             skeletonAnimator.SetBool(name, value);
+        });
+        story.BindExternalFunction("treeAnimationBool", (string name, bool value) =>
+        {
+            Debug.LogFormat("TreeBool {0} {1}", name, value);
+            treeAnimator.SetBool(name, value);
         });
         story.BindExternalFunction("gameOver", () => {
             musicPlayer.Pause();

@@ -28,7 +28,7 @@ Do you want to play again?
 
 === intro ===
 
-Once upon a time...
+<> Once upon a time...
 ~ skeletonAnimationFloat("BrodyPercent", 0.5)
 This is the tale of Lord Viscount Destin Esquire, The Dapper Cadaver.
 
@@ -49,7 +49,7 @@ This is the tale of Lord Viscount Destin Esquire, The Dapper Cadaver.
 
 ~ skeletonAnimationFloat("BrodyPercent", 0)
 ~ skeletonAnimationBool("Dead", true)
-Screw you!
+<> Screw you!
 
 Why are you even playing this game? A filthy commoner like you doesn't deserve Lord Destin's greatness. It took many bards to craft his legendary tale. Shame on you. This is the most important story in the entire world. And yet you scoff at it as you know better.
 
@@ -59,7 +59,7 @@ Have fun with your life. You don't know what you're missing out on.
 
 === Yes ===
 
-Lord Destin lived in a magnificent mansion, one so grandiose that it made other mansions weep tears of insecurity. As opulent as his abode in the woodlands was, Destin lived alone. While this isolation granted Destin a wonderful amount of space between him and detestable humans that oh-so-hated skeletons such as himself, he always wondered what it would be like to live life as human.
+<> Lord Destin lived in a magnificent mansion, one so grandiose that it made other mansions weep tears of insecurity. As opulent as his abode in the woodlands was, Destin lived alone. While this isolation granted Destin a wonderful amount of space between him and detestable humans that oh-so-hated skeletons such as himself, he always wondered what it would be like to live life as human.
 
 * Destin sighed [] and took a puff of his pipe, simultaneously cursing and praising the cruel yet generous fate that had befallen and blessed him.
 
@@ -113,7 +113,7 @@ At least he was delicious.
 
 === JumpOutWindow ===
 
-Destin looked at all his options. The front door was too obvious. Only an idiot would barge right through without a plan. Destin thought up alternate travel routes. He searched all over until he found a window.
+<> Destin looked at all his options. The front door was too obvious. Only an idiot would barge right through without a plan. Destin thought up alternate travel routes. He searched all over until he found a window.
 
 "That's it, the window," said Destin. "No one will find me there."
 
@@ -132,7 +132,7 @@ Hint: It starts with a d and ends with a g.
  
 === BackDoor ===
 
-Destin heard some dogs barking earlier. If he went from the front door, the dogs might chase him. He could try jumping out the window. The gravity would kill him if not the dogs. Destin sat down and reconsidered his options.
+<> Destin heard some dogs barking earlier. If he went from the front door, the dogs might chase him. He could try jumping out the window. The gravity would kill him if not the dogs. Destin sat down and reconsidered his options.
 
 
 "I should have kept a backup plan," said Destin. "How silly of me, I'll just use the back."
@@ -186,7 +186,7 @@ But with a bit of logic, he could overcome the problem.
     -> DownStream
 
 
-==Upstream==
+=== Upstream ===
 
 
 <> Destin got in touch with his inner nerd. He examined the question and focused on two words. Positioning and slope. He thought back to all the times he walked around the mountain. Riding down was much more fun than riding upward. But he didn't understand it until he saw the slope.
@@ -247,7 +247,7 @@ And so, Lord Viscount Destin Esquire, The Dapper Cadaver, lived happily ever aft
 
 === ChopDownTree ===
 
-Screw this riddle. He came here to solve his body issues, not math problems. Destin would take a more practical approach.
+<> Screw this riddle. He came here to solve his body issues, not math problems. Destin would take a more practical approach.
 
 Destin noticed a tree next to the riverbank. The one that wasn't singing about sunshine and rainbows. There was also an ax stuck on the bark. A forester must have left it there after being attacked by rabbits (lucky guess). Perfect. He could cut down the tree and make a bridge. Then, he could cross the river. 
 
@@ -271,7 +271,7 @@ Looks like Destin got the short end of the tree.
 
 === DownStream ===
 
-Destine tried the math and failed miserably. He fidgeted with the numbers, questions, and words themselves. Nothing worked. After 15 minutes of solving the same problem, Destin gave up. Exhausted, he left his fate to the gods.
+<> Destin tried the math and failed miserably. He fidgeted with the numbers, questions, and words themselves. Nothing worked. After 15 minutes of solving the same problem, Destin gave up. Exhausted, he left his fate to the gods.
 
 "I'll take a wild guess and go downstream," Destin said.  " Worst case scenario, I'm still 50 percent right."
 

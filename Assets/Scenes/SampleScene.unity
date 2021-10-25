@@ -994,6 +994,7 @@ MonoBehaviour:
   optionSelect: {fileID: 1151802982}
   skeletonAnimator: {fileID: 1945738397}
   dogAnimator: {fileID: 1423520656}
+  treeAnimator: {fileID: 1224713094}
   buttons:
   - {fileID: 1073201962}
   - {fileID: 406171888}
@@ -1245,7 +1246,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: bac33c98f483f78499894c46ef78734c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
